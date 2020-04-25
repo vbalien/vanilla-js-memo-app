@@ -19,8 +19,8 @@ export default class App extends Entity {
     const data = JSON.parse(storageValue);
     this.memoCount = data.memoCount || this.memoCount;
     this.selectedMemo = data.selectedMemo || this.selectedMemo;
-    this.darkmode = data.darkmode || this.darkmode;
-    this.sidebar = data.sidebar || this.sidebar;
+    this.darkmode = data.darkmode ?? this.darkmode;
+    this.sidebar = data.sidebar ?? this.sidebar;
   }
 
   load() {

@@ -1,10 +1,5 @@
 import State from "./State/index.js";
-import Action, {
-  ADD_MEMO,
-  LOAD_APP,
-  TOGGLE_DARKMODE,
-  TOGGLE_SIDEBAR,
-} from "./Action.js";
+import Action, { LOAD_APP, TOGGLE_DARKMODE, TOGGLE_SIDEBAR } from "./Action.js";
 import { TextEditor, MemoList } from "./View/index.js";
 
 export default class App {
@@ -12,13 +7,16 @@ export default class App {
   action = new Action(this);
 
   constructor() {
-    document
-      .getElementById("addMemo")
-      .addEventListener("click", () => this.action.do(ADD_MEMO));
     this.action.do(LOAD_APP);
   }
 
-  renderDarkmode() {
+  update() {
+    if (this.state.appState.sidebar) {
+      document.getElementById("memoList").parentNode.style.display = "block";
+    } else {
+      document.getElementById("memoList").parentNode.style.display = "none";
+    }
+
     if (this.state.appState.darkmode) {
       document.body.style.backgroundColor = "#000";
       document.body.style.color = "#aaa";
@@ -28,17 +26,8 @@ export default class App {
     }
   }
 
-  renderAside() {
-    if (this.state.appState.sidebar) {
-      document.getElementById("memoList").parentNode.style.display = "block";
-    } else {
-      document.getElementById("memoList").parentNode.style.display = "none";
-    }
-  }
-
   render() {
-    this.renderAside();
-    this.renderDarkmode();
+    this.update();
     document.getElementById("darkmode").onclick = () =>
       this.action.do(TOGGLE_DARKMODE);
     document.getElementById("hamburger").onclick = () =>

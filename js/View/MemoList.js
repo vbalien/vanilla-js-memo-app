@@ -12,8 +12,9 @@ export default class MemoList {
   }
 
   render() {
-    this.el = document.createElement("div");
+    this.el = document.createElement("ul");
     this.el.id = "memoList";
+    this.el.className = "memo-list";
     this.el.appendChild(new MemoListHead(this.app).render());
     for (const item of this.memolist) {
       this.el.appendChild(new MemoListItem(this.app, item).render());
