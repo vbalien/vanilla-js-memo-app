@@ -5,8 +5,7 @@ import Action, {
   TOGGLE_DARKMODE,
   TOGGLE_SIDEBAR,
 } from "./Action.js";
-import MemoList from "./View/MemoList.js";
-import TextEditor from "./View/TextEditor.js";
+import { TextEditor, MemoList } from "./View/index.js";
 
 export default class App {
   state = new State();
