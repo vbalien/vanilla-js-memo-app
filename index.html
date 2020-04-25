@@ -15,9 +15,13 @@
   <body>
     <div id="root" class="wrapper-1">
       <header>
-        <span class="hamburger"><i class="fas fa-bars fa-2x"></i></span>
+        <span class="hamburger" id="hamburger"
+          ><i class="fas fa-bars fa-2x"></i
+        ></span>
         <span class="title">유어슈 인큐베이팅 1 - 메모장 프로그램</span>
-        <span class="darkmode"><i class="fas fa-sun fa-2x"></i></span>
+        <span class="darkmode" id="darkmode"
+          ><i class="fas fa-sun fa-2x"></i
+        ></span>
       </header>
       <div class="wrapper-2">
         <aside>
@@ -25,77 +29,9 @@
             <li id="addMemo" class="memo add" data-memo-num="-1">
               <i class="fas fa-plus"></i>&nbsp;메모 추가
             </li>
-            <li class="selected memo red" data-memo-num="2">
-              <strong>메모 작성 시작</strong>
-              <div
-                style="
-                  overflow: hidden;
-                  white-space: nowrap;
-                  text-overflow: ellipsis;
-                "
-              >
-                <span
-                  >여러 줄의<br /><br /><br />메모를 작성<br /><br /><br /><br />하고</span
-                >
-              </div>
-            </li>
-            <li data-memo-num="1" class="memo blue">
-              <strong>유어슈 웹프론트 인큐베이팅</strong>
-              <div
-                style="
-                  overflow: hidden;
-                  white-space: nowrap;
-                  text-overflow: ellipsis;
-                "
-              >
-                <span>이것의 소스코드를 분석한 후, 다크 </span>
-              </div>
-            </li>
-            <li data-memo-num="0" class="memo yellow">
-              <strong>메모장에 오신 것을 환영합니다!</strong>
-              <div
-                style="
-                  overflow: hidden;
-                  white-space: nowrap;
-                  text-overflow: ellipsis;
-                "
-              >
-                <span>자유롭게 메모하고, 배경색을 변경하고</span>
-              </div>
-            </li>
           </ul>
         </aside>
-        <article class="yellow">
-          <!-- 다크 모드인 경우 배경색을 무시하고 검정 바탕에 하얀색 글씨 -->
-          <div class="texteditor">
-            <div class="colorpicker">
-              <button class="cbtn cbtn-black"><div></div></button>
-              <button class="cbtn cbtn-white"><div></div></button>
-              <button class="cbtn cbtn-red"><div></div></button>
-              <button class="cbtn cbtn-blue"><div></div></button>
-              <button class="cbtn cbtn-yellow"><div></div></button>
-            </div>
-            <div class="savebtn">
-              <i class="fas fa-save fa-2x" aria-hidden="true"></i>
-            </div>
-          </div>
-          <input
-            id="titleElem"
-            type="text"
-            placeholder="메모 제목을 입력하세요."
-            value="메모 작성 시작"
-          />
-          <textarea id="contentElem" placeholder="여기에 메모를 입력하세요.">
-          여러 줄의 
-
-
-          글을 작성할 수 있습니다.
-
-
-          
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </textarea>
-        </article>
+        <article id="texteditor"></article>
       </div>
     </div>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
